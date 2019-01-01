@@ -1,6 +1,8 @@
+local p = {}
+
 local todo_values = {'TODO', 'WIP', 'DONE', 'WAITING'}
 
-local function orgdown_todo_insert()
+function p.todo_insert()
     local current_line = vim.api.nvim_get_current_line()
     local posA, posB = string.find(current_line, "#%s%[%w+%]%s")
     if (posA == nil) then
@@ -9,7 +11,7 @@ local function orgdown_todo_insert()
     end
 end
 
-local function orgdown_todo_remove()
+function p.todo_remove()
     local current_line = vim.api.nvim_get_current_line()
     local posA, posB = string.find(current_line, "#%s%[%w+%]%s")
     if not (posA == nil) then
@@ -18,7 +20,7 @@ local function orgdown_todo_remove()
     end
 end
 
-local function orgdown_todo_cycle()
+function p.todo_cycle()
     local current_line = vim.api.nvim_get_current_line()
     local posA, posB = string.find(current_line, "%[%w+%]")
     if not (posA == nil) then
@@ -38,8 +40,4 @@ local function orgdown_todo_cycle()
     end
 end
 
-return {
-    todo_insert = orgdown_todo_insert,
-    todo_remove = orgdown_todo_remove,
-    todo_cycle = orgdown_todo_cycle,
-}
+return p
