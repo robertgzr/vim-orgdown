@@ -3,5 +3,4 @@ if exists('g:orgdown_loaded')
 endif
 let g:orgdown_loaded = 1
 
-command OrgdownTest :call orgdown#test()
-command OrgdownCycleTodo :call orgdown#cycle_todo()
+command OrgdownTodoCycle :call orgdown#todo_cycle()
