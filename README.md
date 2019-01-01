@@ -13,4 +13,4 @@ taking what I want from [vim-orgmode][1] and applying it to markdown files
 - [ ] compile agenda
     - [ ] local buffer
     - [ ] set of files
-- [ ] timestamp support
+- [x] timestamp support
