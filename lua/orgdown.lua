@@ -80,4 +80,23 @@ function p.timestamp_since()
     return string.format("%dh%02dm%02ds", dur_h, dur_m, dur_s)
 end
 
+function p.checklst_insert_item()
+    local row = vim.api.nvim_win_get_cursor(current_win)[1]
+    local current_buf = vim.api.nvim_get_current_buf()
+    vim.api.nvim_buf_set_lines(current_buf, row+1, row+1, false, {"- [ ] "})
+end
+
+function p.checklst_cycle_item()
+    local current_line = vim.api.nvim_get_current_line()
+    local check = string.match(current_line, "%[([x ])%]")
+    if not (check == nil) then
+        if (check == "x") then
+            new_line = string.gsub(current_line, "%[x%]", "[ ]")
+        else
+            new_line = string.gsub(current_line, "%[%s%]", "[x]")
+        end
+        vim.api.nvim_set_current_line(new_line)
+    end
+end
+
 return p

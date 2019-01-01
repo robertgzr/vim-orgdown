@@ -21,3 +21,11 @@ endfunction
 function! orgdown#timestamp_since()
     return luaeval('require("orgdown").timestamp_since()')
 endfunction
+
+function! orgdown#checklst_insert_item()
+    lua require("orgdown").checklst_insert_item()
+endfunction
+
+function! orgdown#checklst_cycle_item()
+    lua require("orgdown").checklst_cycle_item()
+endfunction

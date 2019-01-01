@@ -9,7 +9,7 @@ taking what I want from [vim-orgmode][1] and applying it to markdown files
 - [x] insert, remove todos
 - [x] cycle states
 - [ ] make states configurable
-- [ ] checklist support
+- [x] checklist support
 - [ ] compile agenda
     - [ ] local buffer
     - [ ] set of files
